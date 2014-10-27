@@ -55,7 +55,7 @@ function gameLoop() {
 }
 
 function gameDraw() {
-    context.fillStyle = "blue";
+    context.fillStyle = "gold";
     context.fillRect(0, 0, screenWidth, screenHeight);
 }
 /*-----------------------------------------------------------------------------

@@ -2,21 +2,13 @@
 body{
     margin: 0;
     padding: 0;
-    border: 5px;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    background-color: gray;
 }
 
 #game-screen{
     display: block;
 }
 
-.col-xs-2 {
-    background-color: blue;
-    text-align: center;
-    border: 0px;
-    padding: 0px;
-    margin: 0px;
+#gameOver {
+    position: absolute;
 }
 
