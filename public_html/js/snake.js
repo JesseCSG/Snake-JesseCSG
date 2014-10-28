@@ -15,6 +15,7 @@ var ScreenWidth;
 var ScreenHeight;
 
 var gameState;
+var gameOverMenu;
 
 /*-----------------------------------------------------------------------------
  * Executing Game Functions
@@ -39,6 +40,8 @@ function gameInitialize() {
     screenWidth = window.innerWidth;
     screenHeight = window.innerHeight;
     
+    gameOverMenu = document.getElementById("gameOver");
+    
     canvas.width = screenWidth;
     canvas.height = screenHeight;
     
@@ -55,7 +58,7 @@ function gameLoop() {
 }
 
 function gameDraw() {
-    context.fillStyle = "gold";
+    context.fillStyle = "blue";
     context.fillRect(0, 0, screenWidth, screenHeight);
 }
 /*-----------------------------------------------------------------------------
@@ -207,5 +210,16 @@ function checkSnakeCollisions(snakeHeadX, snakeHeadY) {
 
 function setState(state) {
     gameState = state;
+    showMenu(state);
     
+}
+
+function displayMenu(menu) {
+    menu.style.visibility = "visible";
+}
+
+function showMenu(state) {
+    if (state == "Game Over") {
+        displayMenu(gameOverMenu);
+    }
 }

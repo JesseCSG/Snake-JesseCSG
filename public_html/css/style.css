@@ -10,5 +10,25 @@ body{
 
 #gameOver {
     position: absolute;
+    visibility: hidden;
+}
+h1, h3{
+    color: chartreuse;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
 
+.title {
+    margin-bottom: 0px;
+    font-size: 56px;
+}
+
+#restartButton {
+    border: 2px solid chartreuse;
+    border-radius: 10px;
+    
+}
+
+#restartButton {
+    color: 
+}
