@@ -7,6 +7,7 @@ var snake;
 var snakeLength;
 var snakeSize;
 var snakeDiretion;
+var snake_array;
 
 var food;
 
@@ -26,7 +27,7 @@ gameInitialize();
 snakeInitialize();
 foodInitialize();
 snakeUpdate();
-setInterval(gameLoop, 1000/10);
+setInterval(gameLoop, 1000/15);
 /*-----------------------------------------------------------------------------
  * Game Functions
  * ----------------------------------------------------------------------------
@@ -41,6 +42,7 @@ function gameInitialize() {
     screenHeight = window.innerHeight;
     
     gameOverMenu = document.getElementById("gameOver");
+    centerMenuPosition(gameOverMenu);
     
     canvas.width = screenWidth;
     canvas.height = screenHeight;
@@ -58,7 +60,7 @@ function gameLoop() {
 }
 
 function gameDraw() {
-    context.fillStyle = "blue";
+    context.fillStyle = "gray";
     context.fillRect(0, 0, screenWidth, screenHeight);
 }
 /*-----------------------------------------------------------------------------
@@ -82,8 +84,10 @@ function snakeInitialize() {
 
 function snakeDraw() {
     for(var index = 0; index < snake.length; index++){
-        context.fillStyle = "lime";
+        context.fillStyle = "red";
         context.fillRect(snake[index].x * snakeSize, snake[index].y * snakeSize, snakeSize, snakeSize);
+        context.strokeStyle = "black";
+        context.strokeRect(snake[index].x * snakeSize, snake[index].y * snakeSize, snakeSize, snakeSize);
     }
 }
 
@@ -150,8 +154,10 @@ function foodInitialize() {
 }
 
 function foodDraw() {
-    context.fillStyle = "gray";
+    context.fillStyle = "pink";
     context.fillRect(food.x * snakeSize, food.y * snakeSize, snakeSize, snakeSize);
+    context.strokeStyle = "black";
+    context.strokeRect(snake[index].x * snakeSize, snake[index].y * snakeSize, snakeSize, snakeSize);
 }
 
 function setFoodPosition() {
@@ -214,6 +220,11 @@ function setState(state) {
     
 }
 
+/*-----------------------------------------------------------------------------
+ * Menu Functions
+ * ----------------------------------------------------------------------------
+ */
+
 function displayMenu(menu) {
     menu.style.visibility = "visible";
 }
@@ -222,4 +233,9 @@ function showMenu(state) {
     if (state == "Game Over") {
         displayMenu(gameOverMenu);
     }
+}
+
+function centerMenuPosition(menu) {
+    menu.style.top = (screenHeight / 2) + "px";
+    menu.style.left = (screenWidth / 2) + "px";
 }
