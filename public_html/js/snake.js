@@ -17,6 +17,7 @@ var ScreenHeight;
 
 var gameState;
 var gameOverMenu;
+var restartButton;
 
 /*-----------------------------------------------------------------------------
  * Executing Game Functions
@@ -60,8 +61,9 @@ function gameLoop() {
 }
 
 function gameDraw() {
-    context.fillStyle = "gray";
-    context.fillRect(0, 0, screenWidth, screenHeight);
+    //*context.fillStyle = "gray";
+    //*context.fillRect(0, 0, screenWidth, screenHeight);
+    context.clearRect(0, 0, screenWidth, screenHeight);
 }
 /*-----------------------------------------------------------------------------
  * Snake Function
