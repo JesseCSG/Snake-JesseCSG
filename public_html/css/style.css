@@ -8,12 +8,12 @@ body{
     display: block;
 }
 
-#gameOver {
+#gameOver, #playHUD{
     position: absolute;
     visibility: hidden;
 }
-h1, h3{
-    color: tomato;
+h1,h2, h3{
+    color: mediumblue;
     text-align: center;
     font-family: 'Roboto', sans-serif;
 }
@@ -23,12 +23,13 @@ h1, h3{
     font-size: 60px;
 }
 
-#restartButton {
-    border: red solid 2px;
+#gameRestart {
+    border: darkcyan;
+    border: solid 2px;
     border-radius: 10px;
     
 }
 
-#restartButton:hover {
-    background-color: darkred;
+#gameRestart:hover {
+    background-color: midnightblue;
 }
