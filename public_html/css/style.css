@@ -7,13 +7,16 @@ body{
 #game-screen{
     display: block;
 }
-
+#gameStart, #playHUD{
+    position: absolute;
+    visibility: hidden;
+}
 #gameOver, #playHUD{
     position: absolute;
     visibility: hidden;
 }
 h1,h2, h3{
-    color: mediumblue;
+    color: honeydew;
     text-align: center;
     font-family: 'Roboto', sans-serif;
 }

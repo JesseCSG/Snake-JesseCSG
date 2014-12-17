@@ -16,6 +16,7 @@ var ScreenWidth;
 var ScreenHeight;
 
 var gameState;
+var gameStartMenu;
 var gameOverMenu;
 var restartButton;
 var playHUD;
@@ -43,6 +44,9 @@ function gameInitialize() {
     screenWidth = window.innerWidth;
     screenHeight = window.innerHeight;
     
+    gameStartMenu = document.getElementById("gameStart");
+    centerMenuPosition(gameStartMenu);
+    
     gameOverMenu = document.getElementById("gameOver");
     centerMenuPosition(gameOverMenu);
     
@@ -65,8 +69,8 @@ function gameLoop() {
 }
 
 function gameDraw() {
-    //*context.fillStyle = "gray";
-    //*context.fillRect(0, 0, screenWidth, screenHeight);
+    context.fillStyle = "gray";
+    context.fillRect(0, 0, screenWidth, screenHeight);
     context.clearRect(0, 0, screenWidth, screenHeight);
 }
 
@@ -74,6 +78,7 @@ function gameRestart() {
     snakeInitialize();
     foodInitialize();
     hideMenu(gameOverMenu);
+    showMenu(gameStartMenu);
     setState("PLAY");
     
 }
@@ -251,7 +256,10 @@ function hideMenu(menu) {
 }
 
 function showMenu(state) {
-    if (state == "Game Over") {
+    if (state == "PLAY") {
+        displayMenu(gameStartMenu);
+    }
+    else if(state == "Game Over") {
         displayMenu(gameOverMenu);
     }
 }
